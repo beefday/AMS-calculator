@@ -1,0 +1,61 @@
+program ams;
+uses crt, math;
+var i, j, pocet_stran, pocet_reg_mand : longint;
+   strany, prime_mand, mand, comp_strany: array of longint;
+begin
+writeln('Zadejte pocet stran, ktere ziskali hlasy!');
+readln(pocet_stran);
+writeln('Zadejte pocet regionalnich mandatu, ktere jsou rozdelovany!');
+readln(pocet_reg_mand);
+{
+pocet_stran:=5;
+pocet_reg_mand:=4;
+}
+setlength(strany, pocet_stran);
+setlength(comp_strany, pocet_stran);
+setlength(prime_mand, pocet_stran);
+setlength(mand, pocet_stran);
+{
+strany[0]:=41700;
+strany[1]:=73673;
+strany[2]:=22130;
+strany[3]:=69518;
+strany[4]:=8479;
+prime_mand[0]:=0;
+prime_mand[1]:=6;
+prime_mand[2]:=0;
+prime_mand[3]:=3;
+prime_mand[4]:=0;
+}
+for i:=1 to pocet_stran do
+        begin
+        writeln('Zadejte pocet hlasu pro stranu:', i+1);
+        readln(strany[i]);
+        writeln('Kolik ziskala strana primych mandatu? Pokud zadny, zadejte nulu.');
+        readln(prime_mand[i]);
+        mand[i]:=mand[i]+prime_mand[i];
+        end;
+
+for i:=1 to pocet_reg_mand do
+        begin
+
+        for j:=1 to pocet_stran do
+                begin
+                        comp_strany[j]:=strany[j] div (mand[j] + 1);
+                end;
+
+        for j:=1 to pocet_stran do
+                begin
+                        If (comp_strany[j]=maxvalue(comp_strany)) then
+                                begin
+                                        mand[j]:=mand[j]+1;
+                                end;
+                end;
+        end;
+
+for i:=1 to pocet_stran do
+        begin
+                writeln('Strana cislo ', i,' obdrzela celkem ', mand[i],' mandatu, z toho ', prime_mand[i],' prime mandaty.');
+                writeln;
+        end;
+end.
