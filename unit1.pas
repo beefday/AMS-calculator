@@ -108,14 +108,14 @@ begin
 pocet_stran:=10;
 pocet_reg_mand:=StrToInt (Edit11.text);
 
-//inicializace arrays, +1 je pridano pro pohodlnejsi iterace (pascal jinak zacina
-//na pozici nula
+{inicializace arrays, +1 je pridano pro pohodlnejsi iterace (pascal jinak zacina}
+{na pozici nula}
 setlength(strany, pocet_stran+1);
 setlength(comp_strany, pocet_stran+1);
 setlength(prime_mand, pocet_stran+1);
 setlength(mand, pocet_stran+1);
 
-//nepekne vepsani hodnot do array, v budoucnu prepsat na iterativni loop s Edit[i] array.
+{nepekne vepsani hodnot do array, v budoucnu prepsat na iterativni loop s Edit[i] array.}
 strany[1]:=StrToInt (Edit1.text);
 strany[2]:=StrToInt (Edit2.text);
 strany[3]:=StrToInt (Edit3.text);
@@ -138,8 +138,8 @@ prime_mand[8]:=StrToInt (Edit19.text);
 prime_mand[9]:=StrToInt (Edit20.text);
 prime_mand[10]:=StrToInt (Edit21.text);
 
-//vyplneni array s celkovym poctem mandatu, primymi mandaty, o kterych
-//nyni mame informaci
+{vyplneni array s celkovym poctem mandatu, primymi mandaty, o kterych}
+{nyni mame informaci}
 for i:=1 to pocet_stran do
         begin
         mand[i]:=mand[i]+prime_mand[i];
@@ -148,28 +148,28 @@ maxmand:=0;
 for i:=1 to pocet_reg_mand do
 begin
 
-             //iterace pro kazde kolo udelovani mandatu
+             {iterace pro kazde kolo udelovani mandatu}
         for j:=1 to pocet_stran do
                 begin
 
-                     //celkovy pocet hlasu pro kazdou stranu vydelime formulkou a prehodime do
-                     //samostastne array pro kazde kolo
+                     {celkovy pocet hlasu pro kazdou stranu vydelime formulkou a prehodime do}
+                     {samostastne array pro kazde kolo}
                         comp_strany[j]:=strany[j] / (mand[j] + 1);
                 end;
 
           for j:=1 to pocet_stran do
                 begin
 
-                     //pokud ma strana po vydeleni formulkou v tomto kole nejvyssi
-                     //pocet hlasu, je ji pridelen mandat, ktery bude reflektovan pri
-                     //pristi iteraci
+                     {pokud ma strana po vydeleni formulkou v tomto kole nejvyssi}
+                     {pocet hlasu, je ji pridelen mandat, ktery bude reflektovan pri}
+                     {pristi iteraci}
                         If (comp_strany[j]=maxvalue(comp_strany)) then
                                 begin
 
-                                   //pri pripadne shode poctu hlasu pro dve strany
-                                   //je udelen mandat obema stranam a je vynechano
-                                   //posledni kolo - k implementaci shoda v poslednim
-                                   //kole https://www.legislation.gov.uk/ukpga/2006/32/section/9
+                                   {pri pripadne shode poctu hlasu pro dve strany}
+                                   {je udelen mandat obema stranam a je vynechano}
+                                   {posledni kolo - k implementaci shoda v poslednim}
+                                   {kole https:www.legislation.gov.uk/ukpga/2006/32/section/9}
                                    If (maxmand<pocet_reg_mand) then
                                        begin
                                         mand[j]:=mand[j]+1;
@@ -179,7 +179,7 @@ begin
                 end;
 end;
 
-//vypise strany s nenulovym poctem hlasou a jejich ziskane mandaty pomoci stringlist objektu
+{vypise strany s nenulovym poctem hlasou a jejich ziskane mandaty pomoci stringlist objektu}
 myStringList:=TStringList.Create;
 for i:=1 to pocet_stran do
     begin
@@ -195,7 +195,7 @@ If (Vysledky.Text='') then
    end;
 myStringList.Free;
 
-//vycisteni arrays
+{vycisteni arrays}
 setlength(strany, 0);
 setlength(comp_strany, 0);
 setlength(prime_mand, 0);
