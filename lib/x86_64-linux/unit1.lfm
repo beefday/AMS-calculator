@@ -1,0 +1,339 @@
+object Form1: TForm1
+  Left = 311
+  Height = 714
+  Top = 106
+  Width = 965
+  Caption = 'AMS Kalkulace'
+  ClientHeight = 714
+  ClientWidth = 965
+  DesignTimePPI = 100
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '2.2.0.4'
+  object Button4: TButton
+    Left = 768
+    Height = 60
+    Top = 464
+    Width = 128
+    Caption = 'Vypočítat'
+    OnClick = Button4Click
+    TabOrder = 21
+  end
+  object Button5: TButton
+    Left = 768
+    Height = 32
+    Top = 656
+    Width = 128
+    Caption = 'Ukončit'
+    OnClick = Button5Click
+    TabOrder = 22
+  end
+  object Label1: TLabel
+    Left = 144
+    Height = 25
+    Top = 24
+    Width = 123
+    Caption = 'Obdržené hlasy'
+  end
+  object Label2: TLabel
+    Left = 400
+    Height = 25
+    Top = 24
+    Width = 200
+    Caption = 'Přímé obdržené mandáty'
+  end
+  object Label3: TLabel
+    Left = 64
+    Height = 25
+    Top = 48
+    Width = 64
+    Caption = 'Strana 1'
+  end
+  object Label4: TLabel
+    Left = 64
+    Height = 25
+    Top = 88
+    Width = 64
+    Caption = 'Strana 2'
+  end
+  object Label5: TLabel
+    Left = 64
+    Height = 25
+    Top = 128
+    Width = 64
+    Caption = 'Strana 3'
+  end
+  object Label6: TLabel
+    Left = 64
+    Height = 25
+    Top = 168
+    Width = 64
+    Caption = 'Strana 4'
+  end
+  object Label7: TLabel
+    Left = 64
+    Height = 25
+    Top = 208
+    Width = 64
+    Caption = 'Strana 5'
+  end
+  object Vysledky: TMemo
+    Left = 144
+    Height = 224
+    Top = 464
+    Width = 608
+    Font.CharSet = EASTEUROPE_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Lines.Strings = (
+      'Memo1'
+    )
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 23
+    TabStop = False
+  end
+  object Edit1: TEdit
+    Left = 144
+    Height = 33
+    Top = 48
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 0
+    Text = '0'
+  end
+  object Edit2: TEdit
+    Left = 144
+    Height = 33
+    Top = 88
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 1
+    Text = '0'
+  end
+  object Edit3: TEdit
+    Left = 144
+    Height = 33
+    Top = 128
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 2
+    Text = '0'
+  end
+  object Edit4: TEdit
+    Left = 144
+    Height = 33
+    Top = 168
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 3
+    Text = '0'
+  end
+  object Edit5: TEdit
+    Left = 144
+    Height = 33
+    Top = 208
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 4
+    Text = '0'
+  end
+  object Edit6: TEdit
+    Left = 144
+    Height = 33
+    Top = 248
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 5
+    Text = '0'
+  end
+  object Edit7: TEdit
+    Left = 144
+    Height = 33
+    Top = 288
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 6
+    Text = '0'
+  end
+  object Edit8: TEdit
+    Left = 144
+    Height = 33
+    Top = 328
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 7
+    Text = '0'
+  end
+  object Edit9: TEdit
+    Left = 144
+    Height = 33
+    Top = 368
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 8
+    Text = '0'
+  end
+  object Edit10: TEdit
+    Left = 144
+    Height = 33
+    Top = 408
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 9
+    Text = '0'
+  end
+  object Edit11: TEdit
+    Left = 664
+    Height = 33
+    Top = 48
+    Width = 104
+    OnChange = EditAllChange
+    TabOrder = 20
+    Text = '0'
+  end
+  object Label8: TLabel
+    Left = 664
+    Height = 25
+    Top = 24
+    Width = 220
+    Caption = 'Počet regionálních mandátů'
+  end
+  object Edit12: TEdit
+    Left = 400
+    Height = 33
+    Top = 48
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 10
+    Text = '0'
+  end
+  object Edit13: TEdit
+    Left = 400
+    Height = 33
+    Top = 88
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 11
+    Text = '0'
+  end
+  object Edit14: TEdit
+    Left = 400
+    Height = 33
+    Top = 128
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 12
+    Text = '0'
+  end
+  object Edit15: TEdit
+    Left = 400
+    Height = 33
+    Top = 168
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 13
+    Text = '0'
+  end
+  object Edit16: TEdit
+    Left = 400
+    Height = 33
+    Top = 208
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 14
+    Text = '0'
+  end
+  object Edit17: TEdit
+    Left = 400
+    Height = 33
+    Top = 248
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 15
+    Text = '0'
+  end
+  object Edit18: TEdit
+    Left = 400
+    Height = 33
+    Top = 288
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 16
+    Text = '0'
+  end
+  object Edit19: TEdit
+    Left = 400
+    Height = 33
+    Top = 328
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 17
+    Text = '0'
+  end
+  object Edit20: TEdit
+    Left = 400
+    Height = 33
+    Top = 368
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 18
+    Text = '0'
+  end
+  object Edit21: TEdit
+    Left = 400
+    Height = 33
+    Top = 408
+    Width = 232
+    OnChange = EditAllChange
+    TabOrder = 19
+    Text = '0'
+  end
+  object Label9: TLabel
+    Left = 64
+    Height = 25
+    Top = 248
+    Width = 64
+    Caption = 'Strana 6'
+  end
+  object Label10: TLabel
+    Left = 64
+    Height = 25
+    Top = 288
+    Width = 64
+    Caption = 'Strana 7'
+  end
+  object Label11: TLabel
+    Left = 64
+    Height = 25
+    Top = 328
+    Width = 64
+    Caption = 'Strana 8'
+  end
+  object Label12: TLabel
+    Left = 64
+    Height = 25
+    Top = 368
+    Width = 64
+    Caption = 'Strana 9'
+  end
+  object Label13: TLabel
+    Left = 64
+    Height = 25
+    Top = 408
+    Width = 74
+    Caption = 'Strana 10'
+  end
+  object Napoveda: TMemo
+    Left = 664
+    Height = 353
+    Top = 88
+    Width = 232
+    Lines.Strings = (
+      'Napoveda'
+    )
+    ReadOnly = True
+    TabOrder = 24
+  end
+end
